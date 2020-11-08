@@ -1,32 +1,53 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="main">
+    <div class="back-img">
+      <img src="./assets/img/bg/bg.jpg" alt="404">
     </div>
-    <router-view/>
+
+    <div id="app">
+    <tap-bar></tap-bar>
+  </div>
   </div>
 </template>
 
-<style>
+<script>
+import TapBar from './components/common/tapbar/tapBar'
+
+export default {
+  name: 'app',
+  components: {
+    TapBar
+  }
+}
+</script>
+
+<style scoped>
+.center-m {
+  position: relative;
+}
+.btm-b {
+  position: relative;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
 }
-
-#nav {
-  padding: 30px;
+.back-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.main{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.back-img img {
+  width: 100%;
 }
 </style>
