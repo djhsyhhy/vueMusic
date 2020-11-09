@@ -5,28 +5,39 @@
     </div>
 
     <div id="app">
-    <tap-bar></tap-bar>
+    <tap-bar ></tap-bar>
+    <center-all class="center-m"></center-all>
+    <bottom-bar class="btm-b"></bottom-bar>
+
   </div>
   </div>
 </template>
 
 <script>
 import TapBar from './components/common/tapbar/tapBar'
+import CenterAll from "views/center/CenterAll";
+import BottomBar from "components/common/bottombar/BottomBar";
 
 export default {
   name: 'app',
   components: {
-    TapBar
+    TapBar,
+    CenterAll,
+    BottomBar
   }
 }
 </script>
 
 <style scoped>
+
 .center-m {
   position: relative;
 }
 .btm-b {
   position: relative;
+  
+  bottom: 62px;
+  background: #fff;
 }
 #app {
   width: 1400px;
