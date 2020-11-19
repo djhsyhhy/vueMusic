@@ -27,8 +27,11 @@ export default {
   position: relative;
   width: 100%;
   height: 600px;
+  margin-bottom:60px !important
+ 
 }
 .ct-container {
   height: 100%;
 }
+
 </style>

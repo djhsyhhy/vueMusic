@@ -1,5 +1,5 @@
 <template>
-  <div class="MusicListItem" :style="{ width: 18 + '%' }">
+  <div class="MusicListItem" @click="toListPage(item.id)" :style="{ width: 18 + '%' }">
     <el-card :body-style="{ padding: '0px' }">
       <img
         :src="item.coverImgUrl || item.sPicUrl || item.cover"
@@ -28,10 +28,7 @@
         </div>
 
         <div class="user">
-          <span
-            ><i class="el-icon-user"></i
-            >{{ item.artistName || item.creator.nickname }}</span
-          >
+          <span><i class="el-icon-user"></i>{{ item.artistName }}</span>
         </div>
         <div class="namet">
           <span>{{ item.name }}</span>
@@ -55,6 +52,17 @@ export default {
         return {};
       },
     },
+  },
+  filters: {},
+  methods: {
+    toListPage(id) { //发送请求   （带有id）
+    console.log(id)
+      if(this.mvType){
+        this.$router.push('/mvvideo' + id)
+      }
+      this.$router.push('/songs' + id)
+
+    }
   },
 };
 </script>

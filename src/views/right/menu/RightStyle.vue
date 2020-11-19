@@ -20,6 +20,6 @@ export default {
 .rt-style {
   width: 100%;
   max-height: 600px;
-  overflow: auto;
+  overflow-y: scroll ;
 }
 </style>

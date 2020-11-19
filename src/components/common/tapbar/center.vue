@@ -42,6 +42,10 @@ methods: {
   togBack() {
       this.$router.back();
     },
+  togSearch() {
+    if(this.input === '') return
+    this.$router.push('/search' + this.input)
+  }
 },
 }
 </script>

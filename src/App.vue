@@ -34,10 +34,11 @@ export default {
   position: relative;
 }
 .btm-b {
-  position: relative;
-  
-  bottom: 62px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   background: #fff;
+  margin: 0 auto;
 }
 #app {
   width: 1400px;

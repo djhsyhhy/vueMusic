@@ -28,8 +28,9 @@ export default {
     };
   },
   methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
+    handleClick(tab, event, name) {
+       this.$router.replace(tab.name);
+      this.activeName = tab.name;
     },
   },
 };
