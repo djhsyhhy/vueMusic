@@ -127,6 +127,7 @@ export default {
     getSongListInfo(id) {
       //获得数据
       getSongListInfo(id).then((res) => {
+        console.log(res)
         this.songList = res.playlist;
         this.creators = res.playlist.creator;
         //遍历数组把得到歌曲id放到一个数据里面

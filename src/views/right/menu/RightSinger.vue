@@ -1,9 +1,9 @@
 <template>
   <div class="right-singer">
     <div class="title-top">
-    <title-box :titles='titleOne'></title-box>
-    <title-box :titles='titleTwo'></title-box>
-    <title-box :titles='titleThree'></title-box>
+    <title-box :titles='titleOne' @changeClass='changeOne'></title-box>
+    <title-box :titles='titleTwo' @changeClass='changeTwo'></title-box>
+    <title-box :titles='titleThree' @changeClass='changeThree'></title-box>
     </div>
     <div class="title">
       <SingerCard v-for="(item, index) in singerAll" :key="index" :item='item'></SingerCard>
@@ -65,10 +65,65 @@ data() {
       getSinger(area, type, initial, limit) { 
         console.log('as')
         getSinger(area, type, initial, limit).then((res) => {
-          console.log(res.artists);
           this.singerAll = res.artists;
         });
+      },
+      changeOne(name) {
+      switch (name) {
+        case "欧美":
+          this.id1 = 96;
+          break;
+        case "华语":
+          this.id1 = 7;
+          break;
+        case "日本":
+          this.id1 = 8;
+          break;
+        case "韩国":
+          this.id1 = 16;
+          break;
+        case "其他":
+          this.id1 = 0;
+          break;
+        default:
+          this.id1 = -1;
       }
+      this.getSinger(this.id1, this.id2, this.id3);
+      },
+    changeTwo(name) {
+      console.log(name);
+      this.limit = 30;
+      switch (name) {
+        case "男歌手":
+          this.id2 = 1;
+          break;
+        case "女歌手":
+          this.id2 = 2;
+          break;
+        case "乐队组合":
+          this.id2 = 3;
+          break;
+        default:
+          this.id2 = -1;
+      }
+      this.getSinger(this.id1, this.id2, this.id3);
+    },
+    changeThree(name) {
+      // console.log(name);
+      // console.log(name.toLowerCase());
+      this.limit = 30;
+      switch (name) {
+        case "#":
+          this.id3 = 0;
+          break;
+        case "热门":
+          this.id3 = -1;
+          break;
+        default:
+          this.id3 = name.toLowerCase();
+      }
+      this.getSinger(this.id1, this.id2, this.id3);
+    },
   },
   created() {
     this.getSinger(-1, -1, -1)

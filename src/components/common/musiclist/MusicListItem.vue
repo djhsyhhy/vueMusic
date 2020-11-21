@@ -28,7 +28,7 @@
         </div>
 
         <div class="user">
-          <span><i class="el-icon-user"></i>{{ item.artistName }}</span>
+          <span><i class="el-icon-user"></i></span>
         </div>
         <div class="namet">
           <span>{{ item.name }}</span>

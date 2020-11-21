@@ -1,8 +1,8 @@
 <template>
   <div id="tapbar">
-    <left class="left"> </left>
-    <center class="center"></center>
-    <right class="right"> </right>
+    <Left class="left"> </Left>
+    <Center class="center"></Center>
+    <Right class="right"> </Right>
   </div>
 </template>
 
@@ -17,9 +17,7 @@ export default {
     Right,
   },
   data() {
-    return {
-        
-    };
+    return {};
   },
   methods: {},
 };
@@ -40,5 +38,4 @@ export default {
   justify-content: space-between;
   position: relative;
 }
-
 </style>

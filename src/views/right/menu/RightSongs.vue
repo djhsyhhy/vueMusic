@@ -63,7 +63,7 @@ export default {
       catlist: [],
       catt: [],
       songsList: [],
-      totals: [],
+      totals: 0,
       limit: 30,
       offset: 0,
       cat: "全部",
@@ -91,14 +91,16 @@ export default {
     getSongListCatlist() {
       //获得类别选项
       getSongListCatlist().then((res) => {
-        this.catlist = res.tags.splice(0, 10);
+        console.log(res.tags[0])
+        this.catlist = res.tags.splice(0, 10); //下方标签
         const arr = [...this.catlist];
-        this.catt = arr.splice(0, 5);
+        this.catt = arr.splice(0, 5); //最上方的
       });
     },
     getSongList(cat, limit, offset) {
       //获得某个类别的音乐
       getSongList(cat, limit, offset).then((res) => {
+         console.log(res)
         this.songsList = res.playlists;
         this.totals = res.total;
       });
@@ -106,7 +108,7 @@ export default {
   },
   created() {
     this.getSongListCatlist();
-    this.getSongList(this.cat, this.limit, this.offset);
+    this.getSongList(this.cat, this.limit, this.offset); //这个地方有bug 标签直接选择是华语其实是全部，所以应该加上一个全部的标签（未改）
   },
 };
 </script>

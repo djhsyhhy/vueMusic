@@ -6,14 +6,14 @@ import actions from './actions'
 Vue.use(Vuex)
 
 const state = {
-  musiclistId:[],
-  musicCount:0,
-  nowmusic:'',
-  nowmusicmenu:[], //这个等等在解决
-  musicmenus:[],
-  userPlayList:[],
-  musicDuration: 0,
-  isPlaying:true,
+  musiclistId: [], //音乐的ID
+  musicCount: 0, //总数
+  nowmusic: '', //现在播放的
+  nowmusicmenu: null, //现在播放音乐的所有属性
+  musicmenus: [], //所有的音乐
+  userPlayList: [], //播放的列表
+  musicDuration: 0, //时间
+  isPlaying: true, //播放状态
 
 }
 export default new Vuex.Store({

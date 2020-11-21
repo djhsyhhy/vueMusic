@@ -85,11 +85,23 @@ export default {
       meta:{index:2}
   },
   {
-    path: '/hotAnchor',
+    path: '/hotAnchor', //热
     name: 'anchorHot',
     component: () => import('components/common/anchor/AnchorListHot'),
     meta:{index:2}
-},
+  },
+  {
+      path: '/payAnchor', //付费的电台
+      name: 'anchorPay',
+      component: () => import('components/common/anchor/AnchorListPay'),
+      meta:{index:2}
+  },
+  {
+      path: '/singer:id', //歌手的详情页
+      name: 'singerlist',
+      component: () => import('components/common/singerlist/SingerMenu'),
+      meta:{index:2}
+  },
 
     
 

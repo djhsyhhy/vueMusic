@@ -32,7 +32,6 @@ export default {
       getSwiper().then(res => {
         this.swipers = res.banners
       })
-      console.log(this.swipers)
     },
     changeUrl() {
 

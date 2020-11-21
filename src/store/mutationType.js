@@ -1,5 +1,5 @@
-export const NOW_MUSIC = 'nowMusic';
-export const NOW_MUSICMENU = 'nowMusicMenu';
+export const NOW_MUSIC = 'nowMusic'; //现在音乐
+export const NOW_MUSICMENU = 'nowMusicMenu'; //现在播放音乐的信息
 export const USER_SONGLIST = 'userSonglist';
 export const MUSIC_LISTIDS = 'musiclistIds';
 export const ADD_COUNT = 'addcount';

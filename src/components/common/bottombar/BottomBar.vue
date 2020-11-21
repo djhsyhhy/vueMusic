@@ -166,6 +166,10 @@ export default {
       showRightDialog: false,
     };
   },
+  created() {
+    console.log('qw')
+    console.log(this.getNowMusicMenu);
+  },
   computed: {
     ...mapGetters([
       "getNowMusic",
@@ -236,6 +240,8 @@ export default {
     }
   },
   mounted() {
+    console.log(this.getNowMusicMenu);
+
     this.musicDurationChange()
   },
   filters: {

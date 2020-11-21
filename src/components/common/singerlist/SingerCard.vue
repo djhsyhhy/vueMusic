@@ -1,6 +1,6 @@
 <template>
   <div class="singer-card">
-    <div class="sing-img">
+    <div class="sing-img" @click.prevent='hand(item.id)'>
       <img :src="item.picUrl" alt="404">
     </div>
     <div class="buttom">
@@ -19,7 +19,12 @@ export default {
         return {}
       }
     }
-  }
+  },
+  methods: {
+    hand(id) {
+      this.$router.push("/singer" + id)
+    }
+  },
 }
 </script>
 

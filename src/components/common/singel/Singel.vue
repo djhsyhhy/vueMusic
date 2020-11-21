@@ -200,7 +200,6 @@ export default {
     //获取歌词
     getSongLyric(id) {
       getSongLyric(id).then((res) => {
-        console.log(res.lrc.lyric);
         this.lyrics = res.lrc.lyric;
         this.createLrcObj(this.lyrics);
       });

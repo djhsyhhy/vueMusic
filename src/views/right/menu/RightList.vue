@@ -14,7 +14,7 @@
         style="marginright: 20px"
       ></top-list-card>
       <title-header
-      name="官方版"
+      name="官方版2"
       style="margintop: 20px; width: 100%"
       :show="false"
     ></title-header>
@@ -58,7 +58,7 @@ export default {
   methods: {
     getTopList() {
       getTopList().then((res) => {
-        console.log(res.list);
+        // console.log(res.list);
         this.allMes = res.list.splice(0, 6);
         this.soarings = this.allMes[0];
         this.newsongs = this.allMes[1];
@@ -66,7 +66,7 @@ export default {
         this.hotsong = this.allMes[3];
         this.raplist = this.allMes[4];
         this.raphotlist = this.allMes[5];
-        console.log(res.list);
+        // console.log(res.list);
         this.globalList = res.list;
         // console.log(this.globalList);
       });

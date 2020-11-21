@@ -7,7 +7,7 @@
     <div id="app">
     <tap-bar ></tap-bar>
     <center-all class="center-m"></center-all>
-    <bottom-bar class="btm-b"></bottom-bar>
+    <BottomBar class="btm-b"></BottomBar>
 
   </div>
   </div>

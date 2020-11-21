@@ -1,9 +1,9 @@
 import { NOW_MUSICMENU, NOW_MUSIC, USER_SONGLIST, MUSIC_LISTIDS, ADD_COUNT, SUB_COUNT, CLEAR_COUNT, SET_COUNT, SET_DURATION, SET_PLAY } from './mutationType'
 export default {
   [NOW_MUSIC](state, url) {
-      state.nowmusic = url;
+      state.nowmusic = url; //增加新的音乐
   },
-  [NOW_MUSICMENU](state, menu) {
+  [NOW_MUSICMENU](state, menu) { //新的音乐的信息
       state.nowmusicmenu = { ...menu };
   },
   [USER_SONGLIST](state, list) {

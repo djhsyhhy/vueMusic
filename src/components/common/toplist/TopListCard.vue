@@ -17,7 +17,7 @@
         v-for="(item, index) in songs"
         :key="index"
         :class="[currentIndex === index ? 'card-active' : '']"
-        @click="handle(index)"
+        @click="handle()"
         @dblclick.stop="playMusic(item.id)" >
 
         <div class="card-left">
@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import { NOW_MUSICMENU, NOW_MUSIC } from "@/store/mutationType";
 import { formatDate } from "common/uctil";
 import {
   getSongListInfo,

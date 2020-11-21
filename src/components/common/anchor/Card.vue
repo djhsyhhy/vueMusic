@@ -1,6 +1,6 @@
 <template>
-  <div class="card" :style=" {width: wth +'%'} ">
-    <div class="img" >
+  <div class="card" :style=" {width: wth +'%'}" @click="handel(item.id)"> 
+    <div class="img"  >
       <img :src="item.picUrl" alt="404" />
       <span class="top" v-if="topShow">{{item.category}}</span>
       <span class="botm">
@@ -46,7 +46,9 @@ export default {
   },
   methods:{
     //点击跳转到对应电台页面
-      
+      handel(id) {
+        this.$router.push('/listAnchor' + id)
+      }
   }
 };
 </script>

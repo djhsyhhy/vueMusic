@@ -1,38 +1,81 @@
 <template>
   <div class="right-new-sing">
     <div class="top-button">
-        <div class="button">
-          <el-button size="small" round :class="isTog? 'active ' : '' ">新歌速递</el-button>
-        <el-button size="small" round :class="isTog? ' ' : 'active' ">新歌上架</el-button>
-        </div>
-      
+      <div class="button">
+        <el-button size="small" round :class="isTog ? 'active ' : ''"
+          >新歌速递</el-button
+        >
+        <el-button size="small" round :class="isTog ? ' ' : 'active'"
+          >新歌上架</el-button
+        >
+      </div>
     </div>
-        <el-tabs v-model="activeName" @tab-click="handleClick">
+    <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="全部" name="first">
-
-        <SingerAlbum wth="95"
-            :imgShow="false"
-            :tableList="huayuList"
-            topTitle="华语歌曲"
-            :images="true"
-            :nicknameshow="true"
-            v-show="togShow"></SingerAlbum>
-
+        <SingerAlbum
+          :wth="wth"
+          :imgShow="false"
+          :tableList="songsList"
+          topTitle="热门歌曲"
+          :images="true"
+          :nicknameshow="true"
+          v-show="togShow"
+        ></SingerAlbum>
       </el-tab-pane>
-    <el-tab-pane label="华语" name="second">配置管理</el-tab-pane>
-    <el-tab-pane label="欧美" name="third">角色管理</el-tab-pane>
-    <el-tab-pane label="韩国" name="fourth">定时任务补偿</el-tab-pane>
-    <el-tab-pane label="日本" name="fourth">日本</el-tab-pane>
-  </el-tabs>
+      <el-tab-pane label="华语" name="second"
+        ><SingerAlbum
+          :wth="wth"
+          :imgShow="false"
+          :tableList="huayuList"
+          topTitle="华语"
+          :images="true"
+          :nicknameshow="true"
+          v-show="togShow"
+        ></SingerAlbum
+      ></el-tab-pane>
+      <el-tab-pane label="欧美" name="third">
+        <SingerAlbum
+          :wth="wth"
+          :imgShow="false"
+          :tableList="oulist"
+          topTitle="欧美"
+          :images="true"
+          :nicknameshow="true"
+          v-show="togShow"
+        ></SingerAlbum>
+      </el-tab-pane>
+      <el-tab-pane label="韩国" name="fourth"
+        ><SingerAlbum
+          :wth="wth"
+          :imgShow="false"
+          :tableList="hanlist"
+          topTitle="涵果"
+          :images="true"
+          :nicknameshow="true"
+          v-show="togShow"
+        ></SingerAlbum
+      ></el-tab-pane>
+      <el-tab-pane label="日本" name="five">
+        <SingerAlbum
+          :wth="wth"
+          :imgShow="false"
+          :tableList="rilist"
+          topTitle="日本"
+          :images="true"
+          :nicknameshow="true"
+          v-show="togShow"
+        ></SingerAlbum>
+      </el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script>
 import { getNewSongs, getNewAlbum } from "network/newSongs";
-import SingerAlbum from '../../../components/common/singerlist/SingerAlbum'
+import SingerAlbum from "../../../components/common/singerlist/SingerAlbum";
 export default {
   components: {
-    SingerAlbum
+    SingerAlbum,
   },
   data() {
     return {
@@ -49,7 +92,8 @@ export default {
       rialbum: [],
       hanalbum: [],
       togShow: true,
-    }
+      wth: 95,
+    };
   },
   methods: {
     handleClick(tab, event) {
@@ -93,8 +137,7 @@ export default {
     },
     getNewSongs(type) {
       getNewSongs(type).then((res) => {
-        
-        console.log(res.data);
+        // console.log(res.data);
         switch (type) {
           case 7:
             this.huayuList = res.data;
@@ -116,7 +159,7 @@ export default {
     getNewAlbum(area) {
       getNewAlbum(area).then((res) => {
         console.log(res);
-        // this.albumList = res.albums;
+        this.albumList = res.albums;
         switch (area) {
           case "ZH":
             this.huayualbum = res.albums;
@@ -140,16 +183,16 @@ export default {
     this.getNewSongs();
     this.getNewAlbum("ALL");
   },
-}
+};
 </script>
 
 <style scoped>
-  .top-button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .active {
-   background-color: aqua;
- }
+.top-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.active {
+  background-color: aqua;
+}
 </style>
