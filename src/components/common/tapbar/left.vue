@@ -124,7 +124,8 @@ export default {
     //退出接口登录 告诉接口已退出 并还原数据等操作
     getPhoneLoginOut() {
       getPhoneLoginOut().then((res) => {
-        console.log(res);
+        // console.log(res);
+        
         //当前用户信息设置为null
         this.currentUserInfo = null;
         //存储用户信息的localstorage设置为null
@@ -135,7 +136,7 @@ export default {
     },
     //退出登录
     logout() {
-      console.log("退出登录");
+      // console.log("退出登录");
       //跳转到主页面
       this.$router.push("/home/rtstyle");
       this.getPhoneLoginOut();

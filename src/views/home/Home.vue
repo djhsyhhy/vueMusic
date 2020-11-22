@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-		<right-top></right-top>
+		<right-top class="right-top">
+			
+		</right-top>
 
 
     <router-view></router-view>
@@ -18,5 +20,6 @@ export default {
 
 <style scoped>
 .home {
+	height: 100%;
 }
 </style>

@@ -7,6 +7,7 @@
         :label="item.label"
         :name="item.name"
         class="tapbar"
+        @hdhead='hdhead'
       ></el-tab-pane>
     </el-tabs>
   </div>
@@ -27,11 +28,41 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.activeName = this.$route.path //这个解决了tap位置不对的问题
+  },
   methods: {
     handleClick(tab, event, name) {
        this.$router.replace(tab.name);
       this.activeName = tab.name;
     },
+    hdhead(path) {
+      console.log('a')
+      this.activeName = path
+    } 
+    // beforeUnload() {
+    //    window.addEventListener("beforeunload", () => {
+    //     // visitedViews数据结构太复杂无法直接JSON.stringify处理，先转换需要的数据
+    //     let tabViews = this.visitedViews.map(item => {
+    //       return {
+    //         fullPath: item.fullPath,
+    //         hash: item.hash,
+    //         meta: { ...item.meta },
+    //         name: item.name,
+    //         params: { ...item.params },
+    //         path: item.path,
+    //         query: { ...item.query },
+    //         title: item.title
+    //       };
+    //     });
+    //     sessionStorage.setItem("tabViews", JSON.stringify(tabViews));
+    //   });
+    //   // 页面初始化加载判断缓存中是否有数据
+    //   let oldViews = JSON.parse(sessionStorage.getItem("tabViews")) || [];
+    //   if (oldViews.length > 0) {
+    //     this.$store.state.tagsView.visitedViews = oldViews;
+    //   }
+    // }
   },
 };
 </script>

@@ -63,7 +63,7 @@ data() {
   },
   methods: {
       getSinger(area, type, initial, limit) { 
-        console.log('as')
+        // console.log('as')
         getSinger(area, type, initial, limit).then((res) => {
           this.singerAll = res.artists;
         });
@@ -126,6 +126,7 @@ data() {
     },
   },
   created() {
+    this.$emit('hdhead', '/home/rtsinger')
     this.getSinger(-1, -1, -1)
   },
 }

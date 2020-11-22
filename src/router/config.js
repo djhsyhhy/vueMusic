@@ -102,6 +102,12 @@ export default {
       component: () => import('components/common/singerlist/SingerMenu'),
       meta:{index:2}
   },
+  {
+    path: '/mvvideo:id',
+    name: 'videolist',
+    component: () => import('components/common/singerlist/SingerMvVideo'),
+    meta:{index:2}
+},
 
     
 

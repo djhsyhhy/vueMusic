@@ -124,6 +124,9 @@ export default {
     },
   },
   methods: {
+    playAll(id) {
+
+    },
     getSongListInfo(id) {
       //获得数据
       getSongListInfo(id).then((res) => {

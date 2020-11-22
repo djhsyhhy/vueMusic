@@ -27,7 +27,7 @@ export default {
   methods: {
     getMusicList() {
       getMusicList().then((res) => {
-        console.log(res)
+        // console.log(res)
         this.musiclist = res.playlists.slice(0, 10);
       });
     },

@@ -21,5 +21,6 @@ export default {
   width: 100%;
   max-height: 600px;
   overflow-y: scroll ;
+  margin-top: 60px;
 }
 </style>

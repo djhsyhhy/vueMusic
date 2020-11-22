@@ -72,7 +72,7 @@
 
 <script>
 import { getNewSongs, getNewAlbum } from "network/newSongs";
-import SingerAlbum from "../../../components/common/singerlist/SingerAlbum";
+import SingerAlbum from "components/common/singerlist/SingerAlbum";
 export default {
   components: {
     SingerAlbum,

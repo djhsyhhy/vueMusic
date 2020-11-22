@@ -102,11 +102,11 @@ import {
   getAnchorType,
 } from "network/anchor";
 
-import SwiperAnchor from "../../../components/common/swiper/SwiperAnchor";
-import TitleIcon from "../../../components/common/anchor/TitleIcon";
+import SwiperAnchor from "components/common/swiper/SwiperAnchor";
+import TitleIcon from "components/common/anchor/TitleIcon";
 import PayCard from "components/common/anchor/PayCard";
-import TitleHeader from "../../../components/common/titleheader/TitleHeader";
-import Card from "../../../components/common/anchor/Card";
+import TitleHeader from "components/common/titleheader/TitleHeader";
+import Card from "components/common/anchor/Card";
 export default {
   components: {
     SwiperAnchor,

@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style scoped>
+.con-all {
+  height: 100%;
+}
 .centerall {
   position: relative;
   width: 100%;

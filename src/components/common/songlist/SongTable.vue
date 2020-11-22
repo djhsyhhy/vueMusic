@@ -164,7 +164,7 @@ export default {
   created() {
     this.id = parseInt(this.$route.params.id);
     this.getSongListInfo(this.id);
-    console.log(this.tableList)
+    // console.log(this.tableList)
   },
   watch: {
     //观察父组件的滑动触发没有 触发了就执行重新请求一次数据
